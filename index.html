@@ -187,7 +187,7 @@ document.addEventListener('DOMContentLoaded', async function() {
       const format = formatEl ? formatEl.value.trim() : '';
       if (!name || !phone) { alert('Заполните имя и телефон'); return; }
       const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbynf4U2Fc_FXiEqkuDx8w9ttdNjju_gNz2Eq6N78XhSoARZFLrPzpxYFQjmu_Gi8wsV/exec';
-      const payload = { name, phone: phone.replace(/\D/g, ''), format, source: 'gates-github' };
+      const payload = { name, phone: phone.replace(/\\D/g, ''), format, source: 'gates-github' };
       fetch(APPS_SCRIPT_URL, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
       this.setState({ submitted: true });
     }\n    };\n  }\n}\n\n<\u002Fscript>\n\n\n<\u002Fbody><\u002Fhtml>"
